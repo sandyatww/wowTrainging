@@ -6,7 +6,7 @@ namespace wowTrainging
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Nagee!");
+            Console.WriteLine("Hello Nagee & Reshmi!");
         }
     }
 }
