@@ -1,12 +1,15 @@
 ﻿using System;
 
-namespace wowTrainging
+namespace Training
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! Nagee branch");
+            MulClass multiply = new MulClass();
+            multiply.Multiplication();
+            multiply.PrintAnswer();
         }
-    }
+}
+
 }
