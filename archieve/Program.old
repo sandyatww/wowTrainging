@@ -1,0 +1,19 @@
+﻿using System;
+
+namespace Training
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Nagee");
+            MulClass multiply = new MulClass();
+
+            Console.WriteLine(multiply.e);
+            multiply.Multiplication();
+            multiply.PrintAnswer();
+            Console.WriteLine(multiply.e);
+        }
+}
+
+}

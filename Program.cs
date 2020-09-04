@@ -6,10 +6,10 @@ namespace Training
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Nagee");
-            MulClass multiply = new MulClass();
-            multiply.Multiplication();
-            multiply.PrintAnswer();
+           Calculations calc = new Calculations(2000);
+
+           Console.WriteLine(calc.PrintTotalBalance(4.5));
+           
         }
 }
 
