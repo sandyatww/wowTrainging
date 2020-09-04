@@ -1,12 +1,25 @@
 ﻿using System;
 
-namespace wowTrainging
+namespace Training
 {
-    class Program
+   public class Program
     {
-        static void Main(string[] args)
+       public double total;
+       public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! Reshmi Branch");
+        //double finalValue=display();
+        //Console.WriteLine("150% of the above value is"+" "+finalValue); 
+        Console.WriteLine("150% of the above value is"+" "+display());
+        Console.WriteLine("Reshmi");
+        }
+        public static double display()
+        {
+        Multiply m=new Multiply();
+        double total=m.printValue();
+        return total;
         }
     }
 }
+
+
+           
