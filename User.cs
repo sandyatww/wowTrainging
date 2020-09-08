@@ -1,26 +1,18 @@
 class User
 
 {
-  private string location;
-  private string name = "Suresh Dasari";
-  public string Location
-  {
-    get { return location; }
-    set { location = value; }
-  }
+  public string Location { get; set; }
+  public string Name { get; set; }
 
-  public string Name
+
+
+
+  public void PrintDetails()
   {
-    get
-    {
-      return name.ToUpper();
-    }
-    set
-    {
-      if (value == "Suresh")
-        name = value;
-    }
+  
 
   }
+
+
 
 }
