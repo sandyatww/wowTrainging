@@ -1,7 +1,7 @@
 using System;
 class SubClass
 {
-     AddClass addobj = new AddClass();
+     AdditionClass addobj = new AdditionClass();
   public int c, d; 
   public int tempValue { get; set; }
 
@@ -14,7 +14,7 @@ class SubClass
   public int Subtract()
   {
 
-    c = addobj.Addition(5, 5);
+    c = addobj.Add(5, 5);
     d = (c - ((c * 10) / 100));
     return d;
   }

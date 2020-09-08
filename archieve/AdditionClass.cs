@@ -1,8 +1,8 @@
 using System;
 
-class AddClass
+class AdditionClass
 {
- public int Addition(int a, int b)
+ public int Add(int a, int b)
  {
      int addResult = a + b ;
      return addResult;

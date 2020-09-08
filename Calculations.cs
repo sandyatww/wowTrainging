@@ -5,7 +5,7 @@ public double PrincipleAmount { get; set; }
 
 public Calculations(double amt)
 {
-    this.PrincipleAmount = amt;
+    PrincipleAmount = amt;
 }
 
 public double PrintTotalBalance(double roi){
