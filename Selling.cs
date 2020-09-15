@@ -21,7 +21,7 @@ class Selling
     public double GetSalesCost()
     {
 
-        double salescost = (SalePriceNow * SalesCostPercentage) / 100;
+        double salescost = ( (SalePriceNow * SalesCostPercentage) / 100 );
         Console.WriteLine("Sales Cost is : " + salescost);
         return salescost;
 
@@ -30,7 +30,7 @@ class Selling
 
     public double GetMoneyLeft()
     {
-        double moneyleft = ((SalePriceNow) - (salescost) - (PendingMortgage));
+        double moneyleft = (SalePriceNow) - (salescost) - (PendingMortgage);
         Console.WriteLine("Money Left is : " + moneyleft);
 
         return moneyleft;
@@ -39,7 +39,7 @@ class Selling
 
     public double GetMoneyGainedOnSelling()
     {
-        double moneygainedonselling = moneyleft * ROI * Year;
+        double moneygainedonselling = (moneyleft) * (ROI) * (Year);
         return moneygainedonselling;
     }
 
