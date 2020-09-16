@@ -10,18 +10,24 @@ public class OwnExpenses
     public double insurance { get; set; }
 
     public double mortgageInterest { get; set; }
-    public double numberOfYears { get; set; }
+      public double numberOfYears { get; set; }
+
+    SellInvestment sellinvest;
+    public OwnExpenses(SellInvestment invest)
+    {
+        sellinvest = invest;
+    }
     public double getMaintenanceCost()
     {
-        double maintenanceTotal=0;
-        if (numberOfYears > 0)
+        double maintenanceTotal = 0;
+        if (sellinvest.numberOfYears > 0)
         {
-            maintenanceTotal = (propMaintenance + waterRates + councilTax + insurance + mortgageInterest) * numberOfYears;
-            Console.WriteLine("The maintance cost for" + " " + numberOfYears + "is" + maintenanceTotal);
+            maintenanceTotal = (propMaintenance + waterRates + councilTax + insurance + mortgageInterest) * sellinvest.numberOfYears;
+            Console.WriteLine("The maintenance cost for" + " " + sellinvest.numberOfYears + " "+"years is" +" " + maintenanceTotal);
         }
         else
         {
-            Console.WriteLine("The maintenance cost is" +" "+ maintenanceTotal);
+            Console.WriteLine("The maintenance cost is" + " " + maintenanceTotal);
         }
         return maintenanceTotal;
     }

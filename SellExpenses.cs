@@ -10,7 +10,7 @@ public class SellExpense
     {
         double salesCost = salePriceNow * salesCostPercent;
         double sellProfit = salePriceNow - (salesCost + pendingMortgage);
-        Console.WriteLine("Sell profit or investment money is"+ " "+sellProfit);
+        //Console.WriteLine("Sell profit or investment money is"+ " "+sellProfit);
         return sellProfit;
     }
 
