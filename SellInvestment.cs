@@ -10,18 +10,26 @@ public class SellInvestment
     public double moneyInvested{get;set;}
 
     //public int numberOfYear =60;
-
     //public double expense{get;set;}
-    SellExpense exp = new SellExpense();
-    public double getInvestmentPlan()
+    SellExpense exp1; // variable type is class here rather then string or int. 
+
+  public SellInvestment(double moneyInvested,SellExpense exp )
+  {
+    this.moneyInvested = moneyInvested;
+    exp1=exp;
+  }
+
+  public double getInvestmentPlan()
     {
+       
+
         double compoundedValue=0;
         if (numberOfYears > 0)
         {
             double body = (1 + (roiPercentage / 12));
             double exponent = 12 * numberOfYears;
             double pow = Math.Pow(body, exponent);
-            compoundedValue =  (exp.getExpense() * pow);
+            compoundedValue =  exp1.getExpense() * pow;
             Console.WriteLine("The compounded value is" + " " + compoundedValue);
         }
         else
