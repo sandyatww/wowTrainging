@@ -21,7 +21,7 @@ public class OwnIncome
 
     public double getPropertyHike()
     {
-        double currentPropertyValue = 1;
+        double currentPropertyValue=0;
         if (numberOfYears > 0)
         {
             double body = 1 + (hikePercent / 12);

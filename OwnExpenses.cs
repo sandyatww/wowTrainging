@@ -3,7 +3,7 @@ using System;
 using tes;
 public class OwnExpenses
 {
-    public double propMaintanance { get; set; }
+    public double propMaintenance { get; set; }
     public double waterRates { get; set; }
     public double councilTax { get; set; }
 
@@ -11,19 +11,19 @@ public class OwnExpenses
 
     public double mortgageInterest { get; set; }
     public double numberOfYears { get; set; }
-    public double getMaintananceCost()
+    public double getMaintenanceCost()
     {
-        double maintainanceTotal = 0;
+        double maintenanceTotal=0;
         if (numberOfYears > 0)
         {
-            maintainanceTotal = (propMaintanance + waterRates + councilTax + insurance + mortgageInterest) * numberOfYears;
-            Console.WriteLine("The maintance cost for" + " " + numberOfYears + "is" + maintainanceTotal);
+            maintenanceTotal = (propMaintenance + waterRates + councilTax + insurance + mortgageInterest) * numberOfYears;
+            Console.WriteLine("The maintance cost for" + " " + numberOfYears + "is" + maintenanceTotal);
         }
         else
         {
-            Console.WriteLine("The maintance cost is" +" "+ maintainanceTotal);
+            Console.WriteLine("The maintenance cost is" +" "+ maintenanceTotal);
         }
-        return maintainanceTotal;
+        return maintenanceTotal;
     }
 
 }
