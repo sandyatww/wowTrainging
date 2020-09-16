@@ -1,5 +1,5 @@
 using System;
-
+/*
 public interface ITransactions {
       // interface members
       void showTransaction();
@@ -29,6 +29,7 @@ public interface ITransactions {
          Console.WriteLine("Amount: {0}", getAmount());
       }
    }
+   
    class Tester {
      
       static void Main(string[] args) {
@@ -40,3 +41,5 @@ public interface ITransactions {
          Console.ReadKey();
       }
    }
+
+   */

@@ -6,7 +6,7 @@ class Selling
     public double SalesCostPercentage { get; set; }
     public double PendingMortgage { get; set; }
     public double ROI { get; set; }
-    public double salescost;
+
 
     public int Year;
 
@@ -15,23 +15,19 @@ class Selling
         Year = year;
     }
 
-    public double moneyleft;
-
-
     public double GetSalesCost()
     {
 
-        double salescost = ( (SalePriceNow * SalesCostPercentage) / 100 );
-        Console.WriteLine("Sales Cost is : " + salescost);
+        double salescost = ((SalePriceNow * SalesCostPercentage) / 100);
+        //Console.WriteLine("Sales Cost is : " + salescost);
         return salescost;
-
 
     }
 
     public double GetMoneyLeft()
     {
-        double moneyleft = (SalePriceNow) - (salescost) - (PendingMortgage);
-        Console.WriteLine("Money Left is : " + moneyleft);
+        double moneyleft = (SalePriceNow) - (GetSalesCost()) - (PendingMortgage);
+        //Console.WriteLine("Money Left is : " + moneyleft);
 
         return moneyleft;
 
@@ -39,7 +35,7 @@ class Selling
 
     public double GetMoneyGainedOnSelling()
     {
-        double moneygainedonselling = (moneyleft) * (ROI) * (Year);
+        double moneygainedonselling = (GetMoneyLeft()) * (ROI) * (Year);
         return moneygainedonselling;
     }
 
