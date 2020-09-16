@@ -21,23 +21,22 @@ public class OwnIncome
 
     public double getPropertyHike()
     {
+        double currentPropertyValue = 1;
         if (numberOfYears > 0)
         {
-            double currentPropertyValue = 1;
-            for (int i = 1; i <= numberOfYears; i++)
-            {
-                double body = 1 + (hikePercent / 12);
-                double exponent = 12 * numberOfYears;
-                double power = Math.Pow(body, exponent);
-                currentPropertyValue = salePriceNow + (salePriceNow * power);
-            }
-            Console.WriteLine("The current property value is" + ":" + currentPropertyValue);
-            return currentPropertyValue;
+            double body = 1 + (hikePercent / 12);
+            double exponent = 12 * numberOfYears;
+            double power = Math.Pow(body, exponent);
+            currentPropertyValue = salePriceNow + (salePriceNow * power);
+            Console.WriteLine("The current property value is" + " " + currentPropertyValue);
+
         }
         else
         {
-            return salePriceNow;
+            Console.WriteLine("The current property value is" + " " + salePriceNow);
         }
+
+        return currentPropertyValue;
     }
     public double getOwnSavings()
     {

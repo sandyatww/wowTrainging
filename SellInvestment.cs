@@ -14,24 +14,21 @@ public class SellInvestment
     //SellExpense exp = new SellExpense();
     public double getInvestmentPlan()
     {
+        double compoundedValue = 0;
         if (numberOfYears > 0)
         {
-            double compoundedValue=1;
-            for (int i = 1; i <= numberOfYears; i++)
-            {
-                double body = 1+(roiPercentage/12);
-                double exponent = 12 * numberOfYears;
-                double pow = Math.Pow(body, exponent);
-                compoundedValue = moneyInvested * pow;
-            }
-
-            Console.WriteLine("The compounded value is" + ":" + compoundedValue);
-            return compoundedValue;
+            double body = 1 + (roiPercentage / 12);
+            double exponent = 12 * numberOfYears;
+            double pow = Math.Pow(body, exponent);
+            compoundedValue = moneyInvested * pow;
+            Console.WriteLine("The compounded value is" + " " + compoundedValue);
         }
         else
         {
-            return moneyInvested;
+            compoundedValue=moneyInvested;
+            Console.WriteLine("Since it was less than an year, no interest is added. The amount received will be " + " " + compoundedValue);
         }
+        return compoundedValue;
     }
 
 

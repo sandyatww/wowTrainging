@@ -13,7 +13,16 @@ public class OwnExpenses
     public double numberOfYears { get; set; }
     public double getMaintananceCost()
     {
-        double maintainanceTotal = (propMaintanance + waterRates + councilTax + insurance + mortgageInterest) * numberOfYears;
+        double maintainanceTotal = 0;
+        if (numberOfYears > 0)
+        {
+            maintainanceTotal = (propMaintanance + waterRates + councilTax + insurance + mortgageInterest) * numberOfYears;
+            Console.WriteLine("The maintance cost for" + " " + numberOfYears + "is" + maintainanceTotal);
+        }
+        else
+        {
+            Console.WriteLine("The maintance cost is" +" "+ maintainanceTotal);
+        }
         return maintainanceTotal;
     }
 
