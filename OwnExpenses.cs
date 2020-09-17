@@ -10,9 +10,13 @@ public class OwnExpenses
     public double insurance { get; set; }
 
     public double mortgageInterest { get; set; }
-      public double numberOfYears { get; set; }
+    public double numberOfYears { get; set; }
 
     SellInvestment sellinvest;
+
+
+// three way to access class member from other class. 1 is via Object, 2. via inheritence , 3 is declaring the class memeber as static
+    
     public OwnExpenses(SellInvestment invest)
     {
         sellinvest = invest;
