@@ -3,7 +3,7 @@ using System;
 class Selling
 {
 
-  /*  public int Year;
+  public int Year;
 
     public Selling(int year)
     {
@@ -13,7 +13,7 @@ class Selling
     public double SalesCostPercentage { get; set; }
     public double PendingMortgage { get; set; }
     public double ROI { get; set; }
-    */
+    
 
    /* public double GetSalesCost(double SalePriceNow, double SalesCostPercentage)
     {
@@ -31,9 +31,10 @@ public double moneyleft, moneygainedonselling;
         return moneyleft;
     }
     
-    public double GetMoneyGainedOnSelling(double moneyLeft, double ROI, int Year)
+
+    public double GetMoneyGainedOnSelling(double moneyleftonselling, double ROI)
     {
-        double moneygainedonselling = (moneyLeft) * (ROI) * (Year);
+        double moneygainedonselling = (moneyleftonselling) * (ROI) * (Year);
         Console.WriteLine("Money Left is : " + moneygainedonselling);
         return moneygainedonselling;
     }
