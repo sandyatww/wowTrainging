@@ -6,47 +6,54 @@ namespace wowTrainging
     {
         static void Main(string[] args)
         {
+            Selling s = new Selling();
+            double moneyLeft = s.GetMoneyLeft(720000,560500,3);
+            s.GetMoneyGainedOnSelling(moneyLeft, 12,1);
+            Console.WriteLine("The money gained on Selling the property in 1 year is " + s.moneygainedonselling);
 
-            /* User u = new User();
-           Home h = new Home();
-
-           u.Location = "Strathfield";
-           u.Name = "Reshmi";
-           h.PrintDetails(u);
-
-           u.Location = "Burwood";
-           h.PrintDetails(u.Location); */
-
-            Selling s = new Selling(1);
-
-            s.SalePriceNow = 720000;
-            s.SalesCostPercentage = 3;
-            s.PendingMortgage = 560500;
-            s.ROI = 12;
-
-            Console.WriteLine("The money gained on Selling the property in 1 year is " + s.GetMoneyGainedOnSelling());
-           
             Selling s1 = new Selling();
-            //s1.GetSalesCost(720000, 3);
             s1.GetMoneyLeft(720000,560500,3);
             s1.GetMoneyGainedOnSelling(12,3);
-            // s1.SalePriceNow = 720000;
-            //s1.SalesCostPercentage = 3;
-            //s1.PendingMortgage = 560500;
-            //s1.ROI = 12;
+            Console.WriteLine("The money gained on Selling the property in 3 years is " + s1.moneygainedonselling);
 
-            Console.WriteLine("The money gained on Selling the property in 3 years is " + s1.GetMoneyGainedOnSelling());
-           
-            Selling s2 = new Selling(5);
-            s2.SalePriceNow = 720000;
-            s2.SalesCostPercentage = 3;
-            s2.PendingMortgage = 560500;
-            s2.ROI = 12;
-            Console.WriteLine("The money gained on Selling the property in 5 years is " + s2.GetMoneyGainedOnSelling());
-            double sellingbenefit = s2.GetMoneyGainedOnSelling();
+            Selling s2 = new Selling();
+            s2.GetMoneyLeft(720000,560500,3);
+            s2.GetMoneyGainedOnSelling(12,5);
+            Console.WriteLine("The money gained on Selling the property in 5 years is " + s2.moneygainedonselling);
+            double sellingbenefit = s2.moneygainedonselling;
 
-            Owning o = new Owning(1);
-            o.yearlyloss = 33319.2;
+            Owning o = new Owning();
+            o.LessSaleCost(720000,4,3);
+            o.MoneyGainedOnOwning(33319.2,720000,4,560500,1);
+            Console.WriteLine("The money gained on Owning the property in 1 year is " + o.moneygainedonowning);
+
+             Owning o1 = new Owning();
+            o1.LessSaleCost(720000,4,3);
+            o1.MoneyGainedOnOwning(33319.2,720000,4,560500,3);
+            Console.WriteLine("The money gained on Owning the property in 3 years is " + o1.moneygainedonowning);
+
+            Owning o2 = new Owning();
+            o2.LessSaleCost(720000,4,3);
+            o2.MoneyGainedOnOwning(33319.2,720000,4,560500,5);
+            Console.WriteLine("The money gained on Owning the property in 5 years is " + o2.moneygainedonowning);
+            double owningbenefit = o2.moneygainedonowning;
+
+            if (sellingbenefit < owningbenefit)
+            {
+                Console.WriteLine("Hello Sandeep, Please own the property for benefit. Good Luck! ");
+            }
+            else
+            {
+                Console.WriteLine("Hello Sandeep, Please sell the property for benefit. Good Luck! ");
+
+            } 
+
+
+        }
+             }
+        }
+
+ /* o.yearlyloss = 33319.2;
             o.SalePriceNow = 720000;
             o.propertyhike = 4;
             o.SalesCostPercentage = 3;
@@ -68,17 +75,44 @@ namespace wowTrainging
             o2.SalesCostPercentage = 3;
             o2.lessmortage = 560500;
             Console.WriteLine("The money gained on Owning the property in 3 year is " + o2.MoneyGainedOnOwning());
-            double owningbenefit = o2.MoneyGainedOnOwning();
+            double owningbenefit = o2.MoneyGainedOnOwning(); */
 
-            if (sellingbenefit < owningbenefit)
-            {
-                Console.WriteLine("Hello Sandeep, Please own the property for benefit. Good Luck! ");
-            }
-            else
-            {
-                Console.WriteLine("Hello Sandeep, Please sell the property for benefit. Good Luck! ");
+           
+            /* User u = new User();
+           Home h = new Home();
 
-            }
-        }
-    }
-}
+           u.Location = "Strathfield";
+           u.Name = "Reshmi";
+           h.PrintDetails(u);
+
+           u.Location = "Burwood";
+           h.PrintDetails(u.Location); */
+
+           /* Selling s = new Selling(1);
+
+            s.SalePriceNow = 720000;
+            s.SalesCostPercentage = 3;
+            s.PendingMortgage = 560500;
+            s.ROI = 12;
+
+            Console.WriteLine("The money gained on Selling the property in 1 year is " + s.GetMoneyGainedOnSelling());
+           
+            
+            //s1.GetSalesCost(720000, 3);
+           
+            // s1.SalePriceNow = 720000;
+            //s1.SalesCostPercentage = 3;
+            //s1.PendingMortgage = 560500;
+            //s1.ROI = 12;
+
+            
+           
+            Selling s2 = new Selling(5);
+            s2.SalePriceNow = 720000;
+            s2.SalesCostPercentage = 3;
+            s2.PendingMortgage = 560500;
+            s2.ROI = 12;
+            Console.WriteLine("The money gained on Selling the property in 5 years is " + s2.GetMoneyGainedOnSelling());
+            double sellingbenefit = s2.GetMoneyGainedOnSelling();
+
+    */

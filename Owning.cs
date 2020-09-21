@@ -1,18 +1,18 @@
 using System;
 class Owning
 {
-    public double yearlyloss { get; set; }
+   
+
+   public double yearlyloss { get; set; }
     public double SalePriceNow { get; set; }
     public double propertyhike { get; set; }
 
     public double lessmortage { get; set; }
-
-
-    public int Years;
-    public Owning(int years)
+   public int Years;
+    /*public Owning(int years)
     {
         Years = years;
-    }
+    } */
 
     public double SalesCostPercentage { get; set; }
 
@@ -27,21 +27,25 @@ class Owning
 
     public double ExpectedSalesValue()
     {
-        double expectedsalesvalue = (SalePriceNow + GetAnnualHike());
+        double expectedsalesvalue = (SalePriceNow + ((SalePriceNow) * (propertyhike / 100)));
         //Console.WriteLine("Expected Sales Value is : " + expectedsalesvalue);
         return expectedsalesvalue;
     }
-
-    public double LessSaleCost()
+    
+public double lesssalecost,moneygainedonowning;
+public int years;
+    public double LessSaleCost(double SalePriceNow,
+                               double propertyhike,
+                               double SalesCostPercentage)
     {
-        double lesssalecost = (ExpectedSalesValue() * ((SalesCostPercentage) / 100));
+        double lesssalecost = ((SalePriceNow + ((SalePriceNow) * (propertyhike / 100)))* ((SalesCostPercentage) / 100));
         //Console.WriteLine("Less Sale Cost Value is : " + lesssalecost);
         return lesssalecost;
     }
 
-    public double MoneyGainedOnOwning()
+    public double MoneyGainedOnOwning(double yearlyloss, double SalePriceNow, double propertyhike, double lessmortage, int years)
     {
-        double moneygainedonowning = (((yearlyloss) + (ExpectedSalesValue()) + (LessSaleCost()) - (lessmortage)) * (Years));
+        double moneygainedonowning = (((yearlyloss) + (SalePriceNow + ((SalePriceNow) * (propertyhike / 100))) + (lesssalecost) - (lessmortage)) * (years));
         //Console.WriteLine("Money Gained On Selling is : " + moneygainedonowning);
         return moneygainedonowning;
 
