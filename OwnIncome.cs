@@ -2,52 +2,42 @@ using System;
 using tes;
 public class OwnIncome
 {
-    public double rentAgencyRate { get; set; }
-    public double yearlyRent { get; set; }
-
-    public int numberOfYears { get; set; }
-
-    public double hikePercent { get; set; }
-    public double salePriceNow { get; set; }
-    public double power { get; set; }
-    SellInvestment sellinvest;
-    SellExpense sellexp1;
+    double salePriceNow{get;set;}
+    public SellInvestment sellinvest{get;set;}
+    public SellExpense sellexp1{get;set;}
     public OwnIncome(SellInvestment invest, SellExpense sellexp)
     {
-        sellinvest = invest;
-        sellexp1=sellexp;
+        this.sellinvest = invest;
+        this.sellexp1 = sellexp;
     }
-    public double getRentIncome()
+    public double getRentIncome(double yearlyRent, double rentAgencyRate)
     {
         double agencyFees = yearlyRent * rentAgencyRate;
         double income = (yearlyRent - agencyFees) * sellinvest.numberOfYears;
         return income;
     }
-
-    public double getPropertyHike()
+    public double getPropertyHike(double hikePercent)
     {
-        double currentPropertyValue=0;
-        if (numberOfYears > 0)
+        double currentPropertyValue = 0;
+        if (this.sellinvest.numberOfYears > 0)
         {
             double body = 1 + (hikePercent / 12);
             double exponent = 12 * sellinvest.numberOfYears;
             double power = Math.Pow(body, exponent);
-            currentPropertyValue = sellexp1.salePriceNow + (sellexp1.salePriceNow * power);
+            currentPropertyValue = this.sellexp1.salePriceNow + (this.sellexp1.salePriceNow)* power;
             Console.WriteLine("The current property value is" + " " + currentPropertyValue);
-
         }
         else
         {
-            Console.WriteLine("The current property value is" + " " + sellexp1.salePriceNow);
+            Console.WriteLine("The current property value is" + " " + this.sellexp1.salePriceNow);
         }
-
         return currentPropertyValue;
     }
-    public double getOwnSavings()
+    public double getOwnSavings(double yearlyRent, double rentAgencyRate,double hikePercent)
     {
 
-        double rentValue = getRentIncome();
-        double hikeValue = getPropertyHike();
+        double rentValue = this.getRentIncome(yearlyRent, rentAgencyRate);
+        double hikeValue = getPropertyHike(hikePercent);
         double ownSavings = rentValue + hikeValue;
         return ownSavings;
     }

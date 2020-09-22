@@ -7,34 +7,36 @@ public class SellInvestment
     public double roiPercentage { get; set; }
     public int numberOfYears { get; set; }
 
-    public double moneyInvested{get;set;}
+    //public double moneyInvested{get;set;}
+    public double MoneyLeftAfterSale{get;set;}
 
     //public int numberOfYear =60;
     //public double expense{get;set;}
-    SellExpense exp1; // variable type is class here rather then string or int. 
+  SellExpense exp1; // variable type is class here rather then string or int. 
 
-  public SellInvestment(double moneyInvested,SellExpense exp )
+  public SellInvestment(SellExpense sellexp, double MoneyLeftAfterSale,double roiPercentage,int numberOfYears)
   {
-    this.moneyInvested = moneyInvested;
-    exp1=exp;
+    this.exp1=sellexp;
+    this.MoneyLeftAfterSale = MoneyLeftAfterSale;
+    this.roiPercentage=roiPercentage;
+    this.numberOfYears=numberOfYears;
   }
 
   public double getInvestmentPlan()
     {
        
-
         double compoundedValue=0;
-        if (numberOfYears > 0)
+        if (this.numberOfYears > 0)
         {
             double body = (1 + (roiPercentage / 12));
-            double exponent = 12 * numberOfYears;
+            double exponent = 12 * this.numberOfYears;
             double pow = Math.Pow(body, exponent);
-            compoundedValue =  exp1.getExpense() * pow;
+            compoundedValue =  this.exp1.MoneyLeftAfterSale() * pow;
             Console.WriteLine("The compounded value is" + " " + compoundedValue);
         }
         else
         {
-            compoundedValue=moneyInvested;
+            compoundedValue=MoneyLeftAfterSale;
             Console.WriteLine("Since it was less than an year, no interest is added. The amount received will be " + " " + compoundedValue);
         }
         return compoundedValue;
@@ -42,4 +44,5 @@ public class SellInvestment
 
 
 }
+
 
