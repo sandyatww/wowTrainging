@@ -7,29 +7,15 @@ namespace wowTrainging
         static void Main(string[] args)
         {
 
-            /* User u = new User();
-           Home h = new Home();
+           Rectangle Rect = new Rectangle();
 
-           u.Location = "Strathfield";
-           u.Name = "Reshmi";
-           h.PrintDetails(u);
+         Rect.setWidth(5);
+         Rect.setHeight(7);
+         Rect.getArea()
 
-           u.Location = "Burwood";
-           h.PrintDetails(u.Location); */
 
-            Selling s = new Selling(1);
-            s.SalePriceNow = 720000;
-            s.SalesCostPercentage = 3;
-            s.PendingMortgage = 560500;
-            s.ROI = 12;
-            s.GetSalesCost();
-            s.GetMoneyLeft();
-            s.GetMoneyGainedOnSelling();
-            Console.WriteLine("The money gained on Selling in 1 year is " +s.GetMoneyGainedOnSelling() );
-           
-
-    
-
+        Tabletop t = new Tabletop(4.5, 7.5);
+         t.Display();
 
 
 
