@@ -8,18 +8,8 @@ namespace wowTrainging
         {
 
             Decision d = new Decision();
-            
-          if (sellingbenefit < owningbenefit)
-            {
-                Console.WriteLine("Hello Sandeep, Please own the property for benefit. Good Luck! ");
-            }
-            else
-            {
-                Console.WriteLine("Hello Sandeep, Please sell the property for benefit. Good Luck! ");
-
-            } 
-
-
+            d.IsItWorthSellingOrOwning();            
+    
         }
              }
         }

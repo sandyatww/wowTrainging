@@ -1,21 +1,22 @@
 using System;
 class Decision
 {
+            public void IsItWorthSellingOrOwning()
+{
+      Selling s = new Selling();
+      double a = s.GetMoneyLeft(720000,560500,3);
+     double d = s.GetMoneyGainedOnSelling(a,12,1);
+      Console.WriteLine("The money gained on Selling the property in 1 year is " + d);
 
-      Selling s = new Selling(1);
-      s.GetMoneyLeft(720000,560500,3);
-      s.GetMoneyGainedOnSelling(s.GetMoneyLeft(720000,560500,3),12);
-      Console.WriteLine("The money gained on Selling the property in 1 year is " + s.moneygainedonselling);
+            Selling s1 = new Selling();
+           double b = s1.GetMoneyLeft(720000,560500,3);
+          double e =  s1.GetMoneyGainedOnSelling(b,12,3);
+            Console.WriteLine("The money gained on Selling the property in 3 years is " + e);
 
-            Selling s1 = new Selling(3);
-            s1.GetMoneyLeft(720000,560500,3);
-            s1.GetMoneyGainedOnSelling(s1.GetMoneyLeft(720000,560500,3),12);
-            Console.WriteLine("The money gained on Selling the property in 3 years is " + s1.moneygainedonselling);
-
-            Selling s2 = new Selling(5);
-            s2.GetMoneyLeft(720000,560500,3);
-            s2.GetMoneyGainedOnSelling(s2.GetMoneyLeft(720000,560500,3),12);
-            Console.WriteLine("The money gained on Selling the property in 5 years is " + s2.moneygainedonselling);
+            Selling s2 = new Selling();
+            double c = s2.GetMoneyLeft(720000,560500,3);
+            double f = s2.GetMoneyGainedOnSelling(c,12,5);
+            Console.WriteLine("The money gained on Selling the property in 5 years is " + f);
             double sellingbenefit = s2.moneygainedonselling;
 
             Owning o = new Owning();
@@ -33,5 +34,17 @@ class Decision
             o2.MoneyGainedOnOwning(33319.2,720000,4,560500,5);
             Console.WriteLine("The money gained on Owning the property in 5 years is " + o2.moneygainedonowning);
             double owningbenefit = o2.moneygainedonowning;
+
+            if (sellingbenefit < owningbenefit)
+            {
+                Console.WriteLine("Hello Sandeep, Please own the property for benefit. Good Luck! ");
+            }
+            else
+            {
+                Console.WriteLine("Hello Sandeep, Please sell the property for benefit. Good Luck! ");
+
+            } 
+
+}
 }
 }
