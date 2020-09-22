@@ -8,7 +8,9 @@ namespace wowTrainging
         {
 
             Decision d = new Decision();
-            d.IsItWorthSellingOrOwning();            
+         //   d.IsItWorthSellingOrOwning();     
+
+            d.IsItWorthSellingOrOwning(2); // Enter Number of Years          
     
         }
              }

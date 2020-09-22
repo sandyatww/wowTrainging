@@ -11,6 +11,9 @@ class Selling
     } */
       public double SalePriceNow { get; set; }
     public double SalesCostPercentage { get; set; }
+
+
+    
     public double PendingMortgage { get; set; }
     public double ROI { get; set; }
     
